@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>ExpenseTracker</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Expenses...">
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Analytics</a>
+            <a href="#">Settings</a>
+        </div>
+    </nav>
+
+    <h2>Add Expense</h2>
+    <form id="expenseForm">
+        <label for="description">Description </label>
+        <input type="text" id="description" required><br><br>
+
+        <label for="amount">Amount </label>
+        <input type="number" id="amount" required><br><br>
+
+        <label for="category">Category </label>
+        <select id="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Others">Others</option>
+        </select><br><br>
+
+        <label for="date">Date </label>
+        <input type="date" id="date" required><br><br>
+
+        <input type="hidden" id="expenseId">
+
+        <button type="submit">Add Expense</button>
+
+    </form>
+
+    <h2>All Expenses</h2>
+    <button onclick="fetchExpenses()">Load Expenses</button>
+    <ul id="expenseList"></ul>
+
+    <script src="/backend/src/main/java/com/expensetracker/backend/model/app.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

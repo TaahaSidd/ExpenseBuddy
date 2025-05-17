@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>View Reports</title>
+</head>
+
+<body>
+    <div class="report-page">
+        <nav class="top-nav">
+            <h1 class="brand-name">ExpenseBuddy</h1>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="viewReport.html" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Settings</a>
+                <div class="search-box">
+                    <input type="search" class="search-input" placeholder="Search in site" aria-label="Search in site">
+                    <img src="/ic-search.png" alt="" class="search-icon">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Key Metrics Section -->
+        <section class="key-metrics">
+            <h2 class="section-title">Expense Overview</h2>
+            <div class="metrics-grid">
+                <div class="metric-card total-expense">
+                    <h3 class="metric-title">Total Expense</h3>
+                    <p class="metric-value" id="totalExpense">₹0</p>
+                </div>
+                <div class="metric-card avg-daily-expense">
+                    <h3 class="metric-title">Avg Daily Expense</h3>
+                    <p class="metric-value" id="avgDailyExpense">₹0</p>
+                </div>
+                <div class="metric-card top-category">
+                    <h3 class="metric-title">Top Category</h3>
+                    <p class="metric-value" id="topCategory">None</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expense Analysis Section -->
+        <section class="expense-analysis">
+            <h2 class="section-title">Expense Analysis</h2>
+            <div class="filter">
+                <button class="filter-btn" data-filter="week">Last Week</button>
+                <button class="filter-btn" data-filter="month">Last Month</button>
+                <button class="filter-btn" data-filter="custom">Custom Range</button>
+            </div>
+            <div class="chart-container">
+                <!-- <h3 class="chart-title">Expense Distribution</h3>
+                <p class="chart-axis">Amount</p> -->
+                <canvas id="expenseTrendsChart" width="400" height="400"></canvas> <!-- Chart will be generated here -->
+                <!-- <p class="chart-axis">Category</p> -->
+            </div>
+        </section>
+
+        <!-- Expense List Section -->
+        <section class="expense-list">
+            <h2>All Expenses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseTable">
+                    <!-- Dynamic rows will be added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Edit Expense Modal -->
+        <div id="editExpenseModal" class="modal">
+            <div class="modal-content">
+                <h3>Edit Expense</h3>
+                <label for="editAmount">Amount:</label>
+                <input type="number" id="editAmount" required />
+
+                <label for="editCategory">Category:</label>
+                <input type="text" id="editCategory" required />
+
+                <label for="editDescription">Description:</label>
+                <input type="text" id="editDescription" required />
+
+                <label for="editDate">Date</label>
+                <input type="date" id="editDate" />
+
+                <button id="saveEditBtn">Save</button>
+                <button id="closeEditModalBtn">Cancel</button>
+            </div>
+        </div>
+
+
+        <script src="/backend/src/main/java/com/expensetracker/backend/model/app2.js"></script>
+</body>
+
+</html>

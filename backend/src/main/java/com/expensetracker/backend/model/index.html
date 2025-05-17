@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="expense-tracker">
+        <nav class="top-nav">
+            <h1 class="brand-name">ExpenseBuddy</h1>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="viewReport.html" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Settings</a>
+                <div class="search-box">
+                    <input type="search" class="search-input" placeholder="Search in site" aria-label="Search in site">
+                    <img src="/ic-search.png" alt="" class="search-icon">
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">Welcome to Expense Buddy!</h2>
+                <p class="hero-description">Track your expenses easily with our intuitive interface.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-outline" onclick="window.location.href='viewReport.html'">View
+                        Reports</button>
+                    <button id="addExpenseBtn" class="btn btn-primary">Add Expense</button>
+                </div>
+            </div>
+            <img src="/backend/photo-1734606901279-6205d6af1d42.avif" alt="Expense tracking illustration"
+                class="hero-image">
+        </section>
+
+        <section id="addExpenseSection" class="expense-form">
+            <form class="form-container">
+                <div class="form-header">
+                    <h2 class="form-title">Add Expense</h2>
+                    <p class="form-description">Fill in the details below to add a new expense.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input type="number" id="amount" class="form-input" placeholder="Enter amount" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <div class="category-chips" role="radiogroup">
+                        <div class="category-chip" role="radio" tabindex="0">Food & Groceries</div>
+                        <div class="category-chip" role="radio" tabindex="0">Bills & Utilities</div>
+                        <div class="category-chip" role="radio" tabindex="0">Transportation</div>
+                        <div class="category-chip" role="radio" tabindex="0">Travel</div>
+                        <div class="category-chip" role="radio" tabindex="0">Health & Fitness</div>
+                        <div class="category-chip" role="radio" tabindex="0">Rent/Mortgage</div>
+                        <div class="category-chip" role="radio" tabindex="0">Others</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" id="description" class="form-input" placeholder="Enter description" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary form-submit">Save</button>
+            </form>
+        </section>
+
+        <section class="recent-expenses">
+            <h2 class="section-title">Recent Expenses</h2>
+            <div class="expense-list" id="recentExpensesList">
+                <!-- Example structure for one expense item -->
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <h2 class="section-title">Expense Overview</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3 class="metric-title">Total Expenses</h3>
+                    <p class="metric-value" id="totalExpenses">$0</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="metric-title">Average Expense</h3>
+                    <p class="metric-value" id="averageExpense">$0</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="metric-title">Monthly Expenses</h3>
+                    <p class="metric-value" id="monthlyExpenses">$0</p>
+                    <p class="metric-change" id="monthlyChange">+0%</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title">Expense Distribution</h3>
+                <p class="chart-axis">Amount</p>
+                <canvas id="expenseChart" width="400" height="400"></canvas>
+                <p class="chart-axis">Category</p>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2 class="section-title">Categories</h2>
+            <div class="category-grid" id="category-grid">
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Stay on top of your expenses with Expense Tracker!</h2>
+                <p class="cta-subtitle">Track, visualize, and take control of your spending today.</p>
+                <div class="pagination-dots">
+                    <div class="pagination-dot active"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+
+                <div class="footer-branding">
+                    <img src="drawing.svg" alt="Logo" class="footer-logo">
+                    <p class="footer-description">Your go-to app for managing expenses efficiently and effectively.</p>
+                </div>
+
+
+                <div class="footer-nav">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Services</a></li>
+                        <li><a href="viewReport.html" class="footer-link">View Report</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+1234567890" class="footer-link">+91 788 745 5945</a></li>
+                        <li><a href="mailto:info@example.com" class="footer-link">ُExpenseBuddy@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Links Section -->
+                <div class="footer-social">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <ul class="footer-social-links">
+                        <li><a href="https://www.instagram.com/t.x.0__/" class="footer-social-link">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/backend/src/main/java/com/expensetracker/backend/model/app.js"></script>
+</body>
+
+</html>

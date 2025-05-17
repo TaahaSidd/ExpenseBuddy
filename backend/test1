@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+    <div class="expense-tracker">
+        <header class="top-header">
+            <div class="header-content">
+                <div class="brand-container">
+                    <h1 class="brand-name">ExpenseBuddy</h1>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b906135ceea4e9393e89885cc1847e0dc10a67df24e4c106fe163ca0f3306158?apiKey=46fe9839cd304222b764b967aed141ca&"
+                    alt="User Profile" class="user-profile" />
+            </div>
+        </header>
+
+        <main>
+            <section class="page-header">
+                <h2 class="page-title">Expense Report</h2>
+                <div class="header-actions">
+                    <button class="filter-group">
+                        <span class="date-text">Last 30 Days</span>
+                    </button>
+                    <button class="custom-date-btn">
+                        <span class="btn-text">Custom Date</span>
+                    </button>
+                    <button class="add-expense-btn">
+                        <span class="btn-text">Add Expense</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 class="stat-title">Total Expenses</h3>
+                        <p class="stat-value">$4,250.00</p>
+                        <p class="stat-trend">12% from last month</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 class="stat-title">Average Daily</h3>
+                        <p class="stat-value">$142.00</p>
+                        <p class="stat-trend">3% from last month</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 class="stat-title">Highest Expense</h3>
+                        <p class="stat-value">$850.00</p>
+                        <p class="stat-category">Shopping</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-container">
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Expense Trend</h3>
+                        <div class="chart-area" role="img" aria-label="Expense trend chart"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Category Distribution</h3>
+                        <div class="chart-area" role="img" aria-label="Category distribution chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-expenses">
+                <h3 class="section-title">Recent Expenses</h3>
+                <table class="expense-table" role="table" aria-label="Recent expenses">
+                    <thead>
+                        <tr>
+                            <th role="columnheader">Date</th>
+                            <th role="columnheader">Category</th>
+                            <th role="columnheader">Description</th>
+                            <th role="columnheader">Amount</th>
+                            <th role="columnheader">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td role="cell">Jan 15, 2025</td>
+                            <td role="cell"><span class="category-badge category-shopping">Shopping</span></td>
+                            <td role="cell">Grocery Shopping</td>
+                            <td role="cell">$85.00</td>
+                            <td role="cell"><img src="action-icon.png" alt="Action menu" class="action-icons" /></td>
+                        </tr>
+                        <tr>
+                            <td role="cell">Jan 14, 2025</td>
+                            <td role="cell"><span class="category-badge category-transport">Transport</span></td>
+                            <td role="cell">Uber Ride</td>
+                            <td role="cell">$25.00</td>
+                            <td role="cell"><img src="action-icon.png" alt="Action menu" class="action-icons" /></td>
+                        </tr>
+                        <tr>
+                            <td role="cell">Jan 13, 2025</td>
+                            <td role="cell"><span class="category-badge category-entertainment">Entertainment</span>
+                            </td>
+                            <td role="cell">Movie Tickets</td>
+                            <td role="cell">$30.00</td>
+                            <td role="cell"><img src="action-icon.png" alt="Action menu" class="action-icons" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pagination" role="navigation" aria-label="Pagination">
+                    <span>Showing 1 to 3 of 50 entries</span>
+                    <button class="page-btn" disabled>Previous</button>
+                    <button class="page-btn page-btn-active" aria-current="page">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Next</button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
+
+.expense-tracker-frame {
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: flex-start;
+    border: 2px solid #ced4da;
+}
+
+.expense-tracker-body {
+    display: flex;
+    width: 100%;
+    padding-bottom: 251px;
+    flex-direction: column;
+}
+
+.expense-tracker-container {
+    background: #f9fafb;
+    display: flex;
+    width: 100%;
+
+}
+
+.top-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1px;
+}
+
+.header-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+}
+
+.header-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.brand-container {
+    display: flex;
+    gap: 16px;
+    margin: auto 0;
+    padding: 2px 0;
+}
+.brand-name {
+    color: #000;
+    font: 600 20px/1 Inter, sans-serif;
+}
+
+.user-profile {
+    aspect-ratio: 1.82;
+    object-fit: contain;
+    object-position: center;
+    width: 73px;
+}
+
+.main-content {
+    align-self: center;
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    flex-direction: column;
+    padding: 32px 14px;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    padding: 1px 0;
+}
+
+.page-title {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    align-self: flex-start;
+}
+
+.header-actions {
+    display: flex;
+    margin-top: 17px;
+    width: 100%;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-group {
+    display: flex;
+    gap: 16px;
+    color: #000;
+}
+
+.date-select {
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    gap: 19px;
+    padding: 8px 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.date-text {
+    margin: auto 0;
+}
+
+.date-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 26px;
+}
+
+.custom-date-btn {
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    gap: 8px;
+    text-align: center;
+    padding: 9px 17px;
+    border: 1px solid #e5e7eb;
+}
+
+.calendar-icon {
+    aspect-ratio: 0.87;
+    object-fit: contain;
+    object-position: center;
+    width: 14px;
+    margin: auto 0;
+}
+
+.btn-text {
+    padding: 2px 1px 10px;
+}
+
+.add-expense-btn {
+    border-radius: 8px;
+    background: #4f46e5;
+    align-self: flex-start;
+    display: flex;
+    gap: 8px;
+    color: #fff;
+    text-align: center;
+    padding: 8px 24px;
+}
+
+.plus-icon {
+    aspect-ratio: 0.87;
+    object-fit: contain;
+    object-position: center;
+    width: 14px;
+    margin: auto 0;
+}
+
+.stats-container {
+    margin-top: 31px;
+    padding: 2px;
+}
+
+.stats-grid {
+    gap: 20px;
+    display: flex;
+}
+
+.stat-card {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.stat-header {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+.stat-title {
+    color: #6b7280;
+    font: 400 16px/1 Inter, sans-serif;
+}
+
+.stat-icon {
+    align-self: flex-start;
+    display: flex;
+    min-height: 16px;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.stat-value {
+    margin-top: 16px;
+    color: #000;
+    white-space: nowrap;
+    padding: 1px 0 7px;
+    font: 700 24px Inter, sans-serif;
+}
+
+.stat-trend {
+    display: flex;
+    margin-top: 8px;
+    width: 100%;
+    gap: 3px;
+    padding: 3px 0;
+}
+
+.trend-icon {
+    align-self: flex-start;
+    display: flex;
+    min-height: 14px;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.trend-text {
+    flex-grow: 1;
+    width: 336px;
+    flex-basis: auto;
+    font: 400 14px/1 Inter, sans-serif;
+}
+
+.trend-positive {
+    color: #22c55e;
+}
+
+.trend-negative {
+    color: #ef4444;
+}
+
+.charts-container {
+    margin-top: 28px;
+    padding: 2px;
+}
+
+.charts-grid {
+    gap: 20px;
+    display: flex;
+}
+
+.chart-card {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    color: #000;
+    width: 100%;
+    padding: 24px;
+    font: 600 16px Inter, sans-serif;
+}
+
+.chart-title {
+    padding: 5px 0;
+}
+
+.chart-area {
+    border-radius: 8px;
+    background: #f9fafb;
+    display: flex;
+    margin-top: 16px;
+    height: 300px;
+}
+
+.recent-expenses {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    margin-top: 29px;
+    flex-direction: column;
+}
+
+.section-title {
+    border-bottom: 1px solid #e5e7eb;
+    color: #000;
+    padding: 29px 24px;
+    font: 600 16px/1 Inter, sans-serif;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.expense-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-header {
+    background: #f9fafb;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    color: #6b7280;
+    white-space: nowrap;
+    font: 500 12px Inter, sans-serif;
+}
+
+.header-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-cell {
+    padding: 13px 24px;
+}
+
+.table-body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.table-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-cell {
+    color: #000;
+    padding: 19px 24px;
+    font: 400 16px Inter, sans-serif;
+}
+
+.category-badge {
+    border-radius: 9999px;
+    padding: 4px 8px;
+    font: 400 12px Inter, sans-serif;
+}
+
+.category-shopping {
+    background: #dbebfe;
+    color: #1e40af;
+}
+
+.category-transport {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.category-entertainment {
+    background: #f3e8ff;
+    color: #6b21a8;
+}
+
+.amount-cell {
+    color: #000;
+    white-space: nowrap;
+    padding: 19px 24px;
+    font: 500 16px Inter, sans-serif;
+}
+
+.actions-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 24px;
+}
+
+.action-icons {
+    aspect-ratio: 8.77;
+    object-fit: contain;
+    object-position: center;
+    width: 140px;
+}
+
+.pagination {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    justify-content: center;
+    padding: 17px 16px;
+}
+
+.pagination-content {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #6b7280;
+    margin: auto 0;
+    padding: 3px 1px;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    color: #000;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.page-btn {
+    border-radius: 4px;
+    padding: 7px 15px 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.page-btn-active {
+    background: #4f46e5;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .expense-tracker-body {
+        max-width: 100%;
+        padding-bottom: 100px;
+    }
+
+    .expense-tracker-container {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .top-header {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .header-content {
+        max-width: 100%;
+    }
+
+    .header-wrapper {
+        max-width: 100%;
+    }
+
+    .main-content {
+        max-width: 100%;
+    }
+
+    .page-header {
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+    .header-actions {
+        max-width: 100%;
+    }
+
+    .add-expense-btn {
+        padding: 0 20px;
+    }
+
+    .stats-container {
+        max-width: 100%;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .stat-card {
+        max-width: 100%;
+        margin-top: 25px;
+        padding: 0 20px;
+    }
+
+    .stat-value {
+        padding-right: 20px;
+        white-space: initial;
+    }
+
+    .charts-container {
+        max-width: 100%;
+    }
+
+    .charts-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .chart-card {
+        max-width: 100%;
+        margin-top: 25px;
+        padding: 0 20px;
+    }
+
+    .chart-title {
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+    .chart-area {
+        max-width: 100%;
+    }
+
+    .recent-expenses {
+        max-width: 100%;
+        margin-right: 2px;
+    }
+
+    .section-title {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .table-container {
+        max-width: 100%;
+    }
+
+    .expense-table {
+        max-width: 100%;
+    }
+
+    .table-header {
+        max-width: 100%;
+        white-space: initial;
+    }
+
+    .header-row {
+        max-width: 100%;
+        white-space: initial;
+    }
+
+    .header-cell {
+        white-space: initial;
+        padding: 0 20px;
+    }
+
+    .table-body {
+        max-width: 100%;
+    }
+
+    .table-row {
+        max-width: 100%;
+    }
+
+    .table-cell {
+        padding: 0 20px;
+    }
+
+    .category-badge {
+        white-space: initial;
+    }
+
+    .amount-cell {
+        white-space: initial;
+        padding: 0 20px;
+    }
+
+    .actions-cell {
+        padding: 0 20px;
+    }
+
+    .pagination {
+        max-width: 100%;
+    }
+
+    .pagination-content {
+        max-width: 100%;
+    }
+
+    .page-btn {
+        white-space: initial;
+    }
+}

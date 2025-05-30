@@ -1,4 +1,4 @@
-package com.expensetracker.backend.model;
+package com.expensetracker.backend.Config;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

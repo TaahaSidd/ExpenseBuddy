@@ -1,4 +1,4 @@
-package com.expensetracker.backend.model;
+package com.expensetracker.backend.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,16 +11,14 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @SuppressWarnings("removal")
     @Bean
     public DefaultSecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/expenses/**").permitAll() // Allow access to your API
-                .anyRequest().authenticated()
-                )
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                        .requestMatchers("/api/expenses/**").permitAll() // Allow access to your API
+                        .anyRequest().authenticated())
+                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }

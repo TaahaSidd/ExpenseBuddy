@@ -1,4 +1,4 @@
-package com.expensetracker.backend.model;
+package com.expensetracker.backend.Controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.expensetracker.backend.Repository.ExpenseRepository;
+import com.expensetracker.backend.model.Expense;
 
 @RestController
 @RequestMapping("/api/expenses")
@@ -55,7 +58,7 @@ public class ExpenseController {
         return expenseRepository.save(expense);
     }
 
-    //used to delete expenses.
+    // used to delete expenses.
     @DeleteMapping("/{id}")
     public void deleteExpense(@PathVariable Long id) {
         Expense expense = expenseRepository.findById(id).orElseThrow(() -> new RuntimeException("Expense not found"));

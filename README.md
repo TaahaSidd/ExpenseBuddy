@@ -39,7 +39,7 @@ mvn clean install
 mvn spring-boot:run
 ````
 # Usage
--Sign up or log in to your account
+- Sign up or log in to your account
 - Add your daily expenses and assign categories
 - View your spending breakdown on the dashboard
 - Set and monitor your monthly budget
